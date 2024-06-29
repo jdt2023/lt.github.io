@@ -1,0 +1,16 @@
+// 添加消息到聊天窗口
+function addMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    document.querySelector('.chat-messages').appendChild(messageElement);
+}
+
+// 发送消息
+document.querySelector('.chat-input button').addEventListener('click', () => {
+    const inputElement = document.querySelector('.chat-input input');
+    const message = inputElement.value.trim();
+    if (message) {
+        addMessage(message);
+        inputElement.value = '';
+    }
+});
